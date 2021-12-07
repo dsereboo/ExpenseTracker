@@ -1,10 +1,14 @@
 import React from "react";
 import { Image, StyleSheet, View, Text } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import BottomNav from "../components/BottomNav";
+
+
 
 function Article() {
   return (
     <View style={styles.container}>
+    <ScrollView>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -34,7 +38,21 @@ function Article() {
           Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
+
+
+        <Text style={styles.articleText}>
+          Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+
+
+        <Text style={styles.articleText}>
+          Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        
       </View>
+     </ScrollView>
       <View style={styles.bottom}>
           <BottomNav/>
       </View>
@@ -45,7 +63,7 @@ function Article() {
 const styles = StyleSheet.create({
   container: {
     flex: 10,
-    marginTop: 60,
+    // marginTop: 60,
     // marginHorizontal: 20,
   },
   articleInfo: {
@@ -56,7 +74,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 4,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
     marginTop:15,
     marginBottom:10,
@@ -68,6 +86,10 @@ const styles = StyleSheet.create({
   image: {
     width: 350,
     height: 350,
+    flex:1,
+
+    // justifyContent:"center"
+    // alignItems:"flex-start",
     borderRadius: 15,
   },
   descriptionImage: {
@@ -99,7 +121,9 @@ const styles = StyleSheet.create({
   },
   bottom:{
       flex:0.9,
-      alignItems:"center"
+      alignItems:"center",
+     
+    //   position:"fixed"
   }
 });
 

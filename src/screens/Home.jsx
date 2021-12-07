@@ -12,6 +12,10 @@ function Home(){
     const handleMove=()=>{
         navigation.navigate("Balance")
     }
+
+    const seeArticles=()=>{
+        navigation.navigate("ArticleList")
+    }
     return(
         
        <View style={styles.container}>
@@ -31,13 +35,15 @@ function Home(){
                     <Text style={styles.viewButtonText}>View</Text>
                 </TouchableOpacity>
            </View>
-           <View style={styles.articlesContainer}>
+           {/* <View style={styles.articlesContainer}>
                <View style={styles.articleHeaderRow}>
                <Text style={styles.articlesHeader}>Latest Articles</Text>
-               <Text style={styles.moreText}>See More</Text>
+               <Text onPress={seeArticles} style={styles.moreText}>See More</Text>
                </View>
+               <View>
                <ArticleCard/>
-           </View>
+               </View> 
+           </View> */}
            <View style={styles.transactionContainer}>
            <View style={styles.transactionHeaderRow}>
                <Text style={styles.transactionHeader}>Recent Transactions</Text>
@@ -47,9 +53,9 @@ function Home(){
             <ExpenseCard/>
             <ExpenseCard/>
            </View>
-           <View style={styles.bottomNavigator}>
+           {/* <View style={styles.bottomNavigator}>
                <BottomNav/>
-           </View>
+           </View> */}
 
        </View>
     )
@@ -58,12 +64,13 @@ function Home(){
 const styles=StyleSheet.create({
     container:{
         flex:10,
+    //   borderTopWidth:0
         // marginTop:30
     },
     screenHeader:{
         flex:1.5,
         paddingTop:20,
-        marginTop:30,
+        // marginTop:30,
         flexDirection:"row",
         backgroundColor:"rgb(47,42,102)",
         justifyContent:"space-between",
@@ -105,7 +112,7 @@ const styles=StyleSheet.create({
         alignItems:"center"
     },
     articlesContainer:{
-        flex:2,
+        flex:1.6,
         marginTop:20,
         // backgroundColor:"#e5e5e5"
     },
